@@ -1,0 +1,16 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "name": "hoge1",
+      "age": 29,
+      "branch": "fuga1"
+    },
+    {
+      "id": 2,
+      "name": "hoge2",
+      "age": 30,
+      "branch": "fuga2"
+    }
+  ]
+}

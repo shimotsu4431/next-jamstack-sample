@@ -14,8 +14,8 @@ const Home: NextPage = () => {
 
       <div className={styles.container}>
         <h1>Home</h1>
-        <Link href={'/blog'}>
-          <a>blog</a>
+        <Link href={'/people'}>
+          <a>people</a>
         </Link>
       </div>
     </>
