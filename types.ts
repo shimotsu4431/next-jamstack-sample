@@ -3,4 +3,4 @@ export type peopleType = {
   name: string;
   age: number;
   branch: string;
-}[]
+}

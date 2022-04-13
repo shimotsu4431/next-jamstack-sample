@@ -13,7 +13,7 @@ export const getStaticProps = async () => {
 }
 
 type Props = {
-  people: peopleType
+  people: peopleType[]
 }
 
 const People: NextPage<Props> = ({ people }) => {
