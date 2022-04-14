@@ -5,11 +5,8 @@ on:
     branches: [main] # ワークフロー起動対象のブランチ
 
 jobs:
-  deploy: # ジョブ名(名前は任意)
+  deploy:
     runs-on: ubuntu-latest
-    timeout-minutes: 10 # デフォルトは360（6時間）のため短い時間で設定しておく
-    env:
-      NODE_ENV: production
 
     steps:
       - name: Checkout
@@ -24,7 +21,7 @@ jobs:
         run: yarn install
 
       - name: Export
-        run: npm run export
+        run: yarn export
 
       - name: Deploy
         run: echo "deploy!"
