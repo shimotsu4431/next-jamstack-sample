@@ -3,6 +3,7 @@ import Head from 'next/head'
 import styles from '../../styles/Blog.module.css'
 import people from '../../contents/people.json'
 import { peopleType } from '../../types'
+import Link from 'next/link'
 
 export const getStaticProps = async () => {
   return {
@@ -32,7 +33,11 @@ const People: NextPage<Props> = ({ people }) => {
         <ul>
           {people && people.map((p) => {
             return (
-              <li key={p.id}>{p.name}</li>
+              <li key={p.id}>
+                <Link href={`/people/${p.id}`}>
+                  <a>{p.name}</a>
+                </Link>
+              </li>
             )
           })}
         </ul>
