@@ -18,8 +18,6 @@ type Props = {
 }
 
 const People: NextPage<Props> = ({ people }) => {
-  console.log("people", people)
-
   return (
     <>
       <Head>
