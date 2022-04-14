@@ -1,6 +1,7 @@
 name: Deploy to Amazon S3
 
 on:
+  workflow_dispatch:
   push: # push時に作動
     branches: [main] # main ブランチが対象
 
