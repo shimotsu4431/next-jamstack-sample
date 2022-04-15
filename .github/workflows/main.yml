@@ -1,4 +1,4 @@
-name: Deploy to Amazon S3
+name: Deploy to AWS S3
 
 on:
   workflow_dispatch:
@@ -6,11 +6,18 @@ on:
     branches: [main] # main ブランチが対象
 
 jobs:
+  greeting:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: say hello!
+        run: echo "hello!"
+
   deploy:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout # ソースコードのチェックアウト
+      - name: Checkout # ソースコードのチェックアウト。リポジトリ内のファイルにアクセスする
         uses: actions/checkout@v2
 
       - name: Setup Node # Node 環境のセットアップ
@@ -18,13 +25,13 @@ jobs:
         with:
           node-version: 16
 
-      - name: Install Dependencies
+      - name: Install Dependencies # 依存モジュールをインストール
         run: yarn install
 
-      - name: Export
+      - name: Export # ビルド & 静的ファイルエクスポート
         run: yarn export
 
-      - name: Deploy
+      - name: Deploy # デプロイ実行
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
