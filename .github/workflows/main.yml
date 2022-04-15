@@ -6,6 +6,17 @@ on:
     branches: [main] # main ブランチが対象
 
 jobs:
+  check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Node.jsのバージョンを確認
+        run: node -v
+      - name: Npmのバージョンを確認
+        run: npm -v
+      - name: Yarnのバージョンを確認
+        run: yarn -v
+
   greeting:
     runs-on: ubuntu-latest
 
