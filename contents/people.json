@@ -11,6 +11,12 @@
       "name": "hoge2",
       "age": 30,
       "branch": "fuga2"
+    },
+    {
+      "id": 3,
+      "name": "hoge3",
+      "age": 31,
+      "branch": "fuga3"
     }
   ]
 }
