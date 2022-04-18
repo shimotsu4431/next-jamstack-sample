@@ -1,29 +1,27 @@
 {
   "Version": "2012-10-17",
   "Statement": [
-    {
-      "Sid": "PublicReadGetObject",
-      "Effect": "Allow",
-      "Principal": "*",
-      "Action": "s3:GetObject",
-      "Resource": "arn:aws:s3:::[my-bucket]/*",
-      "Condition": {
-          "StringLike": {
-              "aws:Referer": "https://xxxxx.cloudfront.net/*"
+      {
+          "Sid": "PublicList",
+          "Effect": "Allow",
+          "Principal": "*",
+          "Action": "s3:ListBucket",
+          "Resource": [
+              "arn:aws:s3:::shimotsu-example-bucket",
+              "arn:aws:s3:::shimotsu-example-bucket/*"
+          ]
+      },
+      {
+          "Sid": "PublicReadGetObject",
+          "Effect": "Allow",
+          "Principal": "*",
+          "Action": "s3:GetObject",
+          "Resource": "arn:aws:s3:::shimotsu-example-bucket/*",
+          "Condition": {
+              "StringLike": {
+                  "aws:Referer": "https://d1ocf77jr70lm2.cloudfront.net/*"
+              }
           }
       }
-    },
-    {
-      "Sid": "DenyWithoutCloudFront",
-      "Effect": "Deny",
-      "Principal": "*",
-      "Action": "s3:*",
-      "Resource": "arn:aws:s3:::[my-bucket]/*",
-      "Condition": {
-          "StringNotLike": {
-              "aws:Referer": "https://xxxxx.cloudfront.net/*"
-          }
-      }
-    }
   ]
 }
