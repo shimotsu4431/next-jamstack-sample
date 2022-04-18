@@ -9,7 +9,7 @@
       "Resource": "arn:aws:s3:::[my-bucket]/*",
       "Condition": {
           "StringLike": {
-              "aws:Referer": "https://xxxx.cloudfront.net/*"
+              "aws:Referer": "https://xxxxx.cloudfront.net/*"
           }
       }
     },
@@ -21,7 +21,7 @@
       "Resource": "arn:aws:s3:::[my-bucket]/*",
       "Condition": {
           "StringNotLike": {
-              "aws:Referer": "https://xxxx.cloudfront.net/*"
+              "aws:Referer": "https://xxxxx.cloudfront.net/*"
           }
       }
     }
