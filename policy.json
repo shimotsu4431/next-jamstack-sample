@@ -4,7 +4,9 @@
       {
           "Sid": "PublicList",
           "Effect": "Allow",
-          "Principal": "*",
+          "Principal": {
+              "AWS": "arn:aws:iam::625849518644:user/jamstack-sample-user"
+          },
           "Action": "s3:ListBucket",
           "Resource": [
               "arn:aws:s3:::shimotsu-example-bucket",
